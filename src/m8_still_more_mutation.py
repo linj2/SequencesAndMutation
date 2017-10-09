@@ -4,14 +4,14 @@ In this module, you mutate by DELETING elements of a list.
 
 Authors: David Mutchler, Amanda Stouder, Chandan Rupakheti, Katie Dion,
          Claude Anderson, Delvin Defoe, Curt Clifton, their colleagues,
-         and PUT YOUR NAME HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Jing Lin.
+"""  # TODONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import m6_mutation
 
 
 def main():
-    run_test_RETURN_delete_negatives()
+    # run_test_RETURN_delete_negatives()
     run_test_MUTATE_delete_negatives()
 
 
@@ -65,14 +65,18 @@ def RETURN_delete_negatives(numbers):
       :type numbers: list
     where the list is a list of numbers.
     """
-    # TODO: 2. First, READ THE ABOVE TEST CODE.
+    # TODONE: 2. First, READ THE ABOVE TEST CODE.
     #          Make sure that you understand it.
     #          In particular, note how it calls the   run_test   function
     #          from the module   m6_mutation   by using the notation:
     #             m6_mutation.run_test(...)
     #          Then, IMPLEMENT and test THIS FUNCTION
     #          (using the above code for testing).
-
+    new_list = []
+    for k in range(len(numbers)):
+        if numbers[k]>=0:
+            new_list+=[numbers[k]]
+    return new_list
 
 def run_test_MUTATE_delete_negatives():
     """ Tests the   MUTATE_delete_negatives   function. """
@@ -124,7 +128,7 @@ def MUTATE_delete_negatives(numbers):
 
     Precondition: The argument is a list of numbers.
     """
-    # TODO: 3. First, READ THE ABOVE TEST CODE.
+    # TODONE: 3. First, READ THE ABOVE TEST CODE.
     #          Make sure that you understand it.
     #          In particular, note how it calls the   run_test   function
     #          from the module   m6_mutation   by using the notation:
@@ -137,7 +141,9 @@ def MUTATE_delete_negatives(numbers):
     #       Take a stab at this problem,
     #       then see the solutions posted on Piazza.
     #       See those solutions even if your approach passes the tests.
-
+    for k in range(len(numbers)-1,-1,-1):
+        if numbers[k] < 0:
+            numbers.remove(numbers[k])
 
 # ----------------------------------------------------------------------
 # If this module is running at the top level (as opposed to being
